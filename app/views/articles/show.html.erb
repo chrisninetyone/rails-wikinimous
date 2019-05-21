@@ -1,0 +1,25 @@
+<div class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+  <h2 class="nav-item"><%= link_to "Wikinimous", articles_path %></h2>
+  <p class="nav-item"><%= link_to "", new_article_path,
+  class: "fas fa-plus" %></p>
+</div>
+
+<div class="container">
+
+  <div class="row d-flex">
+    <div class="col-12 text-center d-inline-block">
+    <h3><%= @article.title %>
+      <%= link_to "", edit_article_path,
+      class: "far fa-edit" %>
+      <%= link_to "", article_path(@article.id),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "far fa-trash-alt" %>
+    </h3>
+
+    <div>
+      <p><%= @article.content %></p>
+      </div>
+    </div>
+  </div>
+</div>
